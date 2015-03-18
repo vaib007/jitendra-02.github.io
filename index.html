@@ -34,73 +34,68 @@
         <p>Jitendra Kumar Khasdev
 17-March-2015</p>
 
-<p>Mapping of functions (library or user defined) to system call.</p>
+<p><h3>Mapping of functions (library or user defined) to system call.</h3></p>
 
-<p>Abstract:
+<p style="text-align: justify"><b>Abstract:</b><br/>
 Mapping of functions with respective system calls will the help to give closer view of interaction between kernel space and user space. Prime focus is on to simulate user space function to kernel space function. This project will simulate linking between user space function to kernel space function. Adding this feature to strace, it will make it more powerful for visualization. Strace can do effectively call by call mapping with respective system call.</p>
 
-<p>Content:
+<p style="text-align: justify"><b>Content:</b><br/>
 When a function is called into a simple c program, ultimately it invokes a system call to get service by the kernel. Most of the time, user (developer/administrator etc.) having a difficulty to find which function is invoking a particular system call.</p>
 
-<p>Let us assume two different library functions invoking same system call simultaneously. Now, user has to put very hard effort to differentiate which function is linked with a particular system call. Currently strace displays system calls called by a program without any callee function description. </p>
+<p style="text-align: justify">Let us assume two different library functions invoking same system call simultaneously. Now, user has to put very hard effort to differentiate which function is linked with a particular system call. Currently strace displays system calls called by a program without any callee function description. Our project will map each user space function to corresponding system call in a proper view format, so that user will not having trouble to simulate user space function to kernel space function. It will make debugging and tracing fast and more efficient.</p>
 
-<p>Our project will map each user space function to corresponding system call in a proper view format, so that user will not having trouble to simulate user space function to kernel space function. It will make debugging and tracing fast and more efficient.</p>
-
-<p>Design :</p>
-
-<p>Step 1:  First user will fire a binary of program with strace command with specified flag.</p>
-
-<p>Step 2:  Whenever strace will detect particular flag then it will perform following steps else it will   give result as it is as it gives.</p>
-
-<p>Step 3:  It will collect the list of functions which is used into a particular program from symbol table or may be any other way. [Preliminary focused on symbol table].</p>
-
-<p>Step 4:  Now perform mapping of each function to corresponding system call and display into such kind of format [format of display is not fixed it is depends on degree of attractiveness].</p>
+<p><b>Design:</b></p>
+<br/>
+<p>Step 1:  First user will fire a binary of program with strace command with specified flag.<br/>
+   Step 2:  Whenever strace will detect particular flag then it will perform following steps else it will   give result as it is as it gives.<br/>
+   Step 3:  It will collect the list of functions which is used into a particular program from symbol table or may be any other way. [Preliminary focused on symbol table].<br/>
+   Step 4:  Now perform mapping of each function to corresponding system call and display into such kind of format [format of display is not fixed it is depends on degree of attractiveness].</p>
 
 <pre><code>eg. Printf() calls internally write() syscall, so output format as,
 printf ()         -----------------------------------------
-           -&gt; |   write(1, buffer, sizeof(buffer));    |
-              	 ------------------------------------------
+ 	       -&gt; |   write(1, buffer, sizeof(buffer));    |
+               	  ------------------------------------------
 </code></pre>
 
 <p>Step 5 : Exit </p>
-<p>it will trace function calls like debugger fashion but limit of tracing will be until it  reach to a appropriate system call. It will not only give broad view of working of the system but also it will be handy hacking tool as well as it will be helpful for new bodies to apply the concept of computer science.</p>
+<p style="text-align: justify">it will trace function calls like debugger fashion but limit of tracing will be until it  reach to a appropriate system call. It will not only give broad view of working of the system but also it will be handy hacking tool as well as it will be helpful for new bodies to apply the concept of computer science.</p>
 <p>That will increase strace audience area as well as it will be a more strong and powerful tool.</p>
 
-<p>Education:
+<p><b>Education:</b>
 Currently pursuing Bachelor’s in Engineering from Computer Science and Engineering with 8.02 CGPA.
 Higher secondary school     78.6 %
 High school             87.2%</p>
 
-<p>Courseware:
+<p><b>Courseware:</b>
 C, Data structure, Operating system, Linux, Computer system organisation, Networking, OOT, Principle of programming language, Software engineering and project management etc.</p>
 
-<p>Training:
+<p><b>Training:</b>
 C, Linux, System programming</p>
 
-<p>Projects:
+<p><b>Projects:</b>
 NEKTech-Linux-shell development:
 It is Unix like a shell for nektech-linux, I have worked two feature of it (cd support, and cd ~ support). </p>
 
-<p>System Identification Module:
+<p><b>System Identification Module:</b>
 It is utility which keep record of active client machines over the server. Basically it based on product activation and deactivation model.</p>
 
-<p>Gesture detection based security system:
+<p><b>Gesture detection based security system:</b>
 In which, it detects predefined gesture of the person, and take action according to that gesture. </p>
 
-<p>Activities:</p>
+<p><b>Activities:</b></p>
 
 <ol>
-<li><p>My one Linux kernel patch is accepted by the Linux community, however it was just coding style fix but I become aware of code review process of Linux community.</p></li>
-<li><p>I am aware of version controlling software and I have worked git.</p></li>
-<li><p>I am good c, Linux and Operating System concept and enthusiastic about system programming and kernel.</p></li>
-<li><p>I have communicated in open source community with developer via mailing list.</p></li>
-<li><p>Solved coding problems on hackerrank.com, and some on spoj.com</p></li>
-<li><p>Participated into eudyputa challenge solved till level 6.</p></li>
+<li>My one Linux kernel patch is accepted by the Linux community, however it was just coding style fix but I become aware of code review process of Linux community.</li>
+<li>I am aware of version controlling software and I have worked git.</li>
+<li>I am good c, Linux and Operating System concept and enthusiastic about system programming and kernel.</li>
+<li>I have communicated in open source community with developer via mailing list.</li>
+<li>Solved coding problems on hackerrank.com, and some on spoj.com</li>
+<li>Participated into eudyputa challenge solved till level 6.</li>
 </ol>
 
-<p>I am focused on only this project and period of next 4-5 month I am free, because I am on end session of my engineering so it will be a great chance for me to work for real world before entering into a professional engineering life.   </p>
+<p style="text-align: justify">I am focused on only this project and period of next 4-5 month I am free, because I am on end session of my engineering so it will be a great chance for me to work for real world before entering into a professional engineering life.   </p>
 
-<p>If I got chance to work on strce in GSOC2015, I will report here about my progress so stay tuned :-)   </p>
+<p>If I got chance to work on strace in GSOC2015, I will report here about my progress so stay tuned :-)   </p>
       </section>
       <footer>
       </footer>
