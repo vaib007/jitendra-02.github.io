@@ -32,16 +32,13 @@
 
 <p>Mapping of functions (library or user defined) to system call.</p>
 
-<p>Abstract:</p>
+<p>Abstract:
+Mapping of functions with respective system calls will the help to give closer view of interaction between kernel space and user space. Prime focus is on to simulate user space function to kernel space function. This project will simulate linking between user space function to kernel space function. Adding this feature to strace, it will make it more powerful for visualization. Strace can do effectively call by call mapping with respective system call.</p>
 
-<p>Mapping of functions with respective system calls will the help to give closer view of interaction between kernel space and user space. Prime focus is on to simulate user space function to kernel space function. This project will simulate linking between user space function to kernel space function. Adding this feature to strace, it will make it more powerful for visualization. Strace can do effectively call by call mapping with respective system call.</p>
+<p>Content:
+When a function is called into a simple c program, ultimately it invokes a system call to get service by the kernel. Most of the time, user (developer/administrator etc.) having a difficulty to find which function is invoking a particular system call.</p>
 
-<p>Content:</p>
-
-<p>Description and why it is innovative</p>
-
-<p>When a function is called into a simple c program, ultimately it invokes a system call to get service by the kernel. Most of the time, user (developer/administrator etc.) having a difficulty to find which function is invoking a particular system call. 
-                        Let us assume two different library functions invoking same system call simultaneously. Now, user has to put very hard effort to differentiate which function is linked with a particular system call. Currently strace displays system calls called by a program without any callee function description. </p>
+<p>Let us assume two different library functions invoking same system call simultaneously. Now, user has to put very hard effort to differentiate which function is linked with a particular system call. Currently strace displays system calls called by a program without any callee function description. </p>
 
 <p>Our project will map each user space function to corresponding system call in a proper view format, so that user will not having trouble to simulate user space function to kernel space function. It will make debugging and tracing fast and more efficient.</p>
 
@@ -51,14 +48,13 @@
 
 <p>Step 2:  Whenever strace will detect particular flag then it will perform following steps else it will   give result as it is as it gives.</p>
 
-<p>Step 3:  It will collect the list of functions which is used into a particular program from symbol table     or may be any other way. [Preliminary focused on symbol table].</p>
+<p>Step 3:  It will collect the list of functions which is used into a particular program from symbol table or may be any other way. [Preliminary focused on symbol table].</p>
 
-<p>Step 4:  Now perform mapping of each function to corresponding system call and display into such      kind of format [format of display is not fixed it is depends on degree of attractiveness].</p>
+<p>Step 4:  Now perform mapping of each function to corresponding system call and display into such kind of format [format of display is not fixed it is depends on degree of attractiveness].</p>
 
 <pre><code>eg. Printf() calls internally write() syscall, so output format as,
-
 printf ()         -----------------------------------------
-                  -&gt;     |   write(1, buffer, sizeof(buffer));    |
+                  -&gt; |   write(1, buffer, sizeof(buffer));    |
               ------------------------------------------
 </code></pre>
 
@@ -102,6 +98,8 @@ In which, it detects predefined gesture of the person, and take action according
 </ol>
 
 <p>I am focused on only this project and period of next 4-5 month I am free, because I am on end session of my engineering so it will be a great chance for me to work for real world before entering into a professional engineering life.   </p>
+
+<p>If I got chance to work on strce in GSOC2015, I will report here about my progress so stay tuned :-)   </p>
       </section>
       <footer>
         <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
