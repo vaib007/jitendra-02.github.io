@@ -34,19 +34,17 @@
         <p>Jitendra Kumar Khasdev
 17-March-2015</p>
 
-<p><h3>Mapping of functions (library or user defined) to system call.</h3></p>
+<p><h3>Mapping of functions (library or user defined) to system call</h3></p>
+<h4>Abstract:</h4>
+<p style="text-align: justify">Mapping of functions with respective system calls will the help to give closer view of interaction between kernel space and user space. Prime focus is on to simulate user space function to kernel space function. This project will simulate linking between user space function to kernel space function. Adding this feature to strace, it will make it more powerful for visualization. Strace can do effectively call by call mapping with respective system call.</p>
 
-<p style="text-align: justify"><b>Abstract:</b><br/>
-Mapping of functions with respective system calls will the help to give closer view of interaction between kernel space and user space. Prime focus is on to simulate user space function to kernel space function. This project will simulate linking between user space function to kernel space function. Adding this feature to strace, it will make it more powerful for visualization. Strace can do effectively call by call mapping with respective system call.</p>
-
-<p style="text-align: justify"><b>Content:</b><br/>
+<h4>Content:</h4><p style="text-align: justify">
 When a function is called into a simple c program, ultimately it invokes a system call to get service by the kernel. Most of the time, user (developer/administrator etc.) having a difficulty to find which function is invoking a particular system call.</p>
 
 <p style="text-align: justify">Let us assume two different library functions invoking same system call simultaneously. Now, user has to put very hard effort to differentiate which function is linked with a particular system call. Currently strace displays system calls called by a program without any callee function description. Our project will map each user space function to corresponding system call in a proper view format, so that user will not having trouble to simulate user space function to kernel space function. It will make debugging and tracing fast and more efficient.</p>
 
-<p><b>Design:</b></p>
-<br/>
-<p>Step 1:  First user will fire a binary of program with strace command with specified flag.<br/>
+<p><h4>Design:</h4>
+   Step 1:  First user will fire a binary of program with strace command with specified flag.<br/>
    Step 2:  Whenever strace will detect particular flag then it will perform following steps else it will   give result as it is as it gives.<br/>
    Step 3:  It will collect the list of functions which is used into a particular program from symbol table or may be any other way. [Preliminary focused on symbol table].<br/>
    Step 4:  Now perform mapping of each function to corresponding system call and display into such kind of format [format of display is not fixed it is depends on degree of attractiveness].</p>
@@ -61,28 +59,28 @@ printf ()         -----------------------------------------
 <p style="text-align: justify">it will trace function calls like debugger fashion but limit of tracing will be until it  reach to a appropriate system call. It will not only give broad view of working of the system but also it will be handy hacking tool as well as it will be helpful for new bodies to apply the concept of computer science.</p>
 <p>That will increase strace audience area as well as it will be a more strong and powerful tool.</p>
 
-<p><b>Education:</b>
+<p><h4>Education:</h4>
 Currently pursuing Bachelor’s in Engineering from Computer Science and Engineering with 8.02 CGPA.
 Higher secondary school     78.6 %
 High school             87.2%</p>
 
-<p><b>Courseware:</b>
+<p><h4>Courseware:</h4>
 C, Data structure, Operating system, Linux, Computer system organisation, Networking, OOT, Principle of programming language, Software engineering and project management etc.</p>
 
-<p><b>Training:</b>
+<p><h4>Training:</h4>
 C, Linux, System programming</p>
 
-<p><b>Projects:</b>
+<p><h4>Projects:</h4>
 NEKTech-Linux-shell development:
 It is Unix like a shell for nektech-linux, I have worked two feature of it (cd support, and cd ~ support). </p>
 
-<p><b>System Identification Module:</b>
+<p><h4>System Identification Module:</h4>
 It is utility which keep record of active client machines over the server. Basically it based on product activation and deactivation model.</p>
 
-<p><b>Gesture detection based security system:</b>
+<p><h4>Gesture detection based security system:</h4>
 In which, it detects predefined gesture of the person, and take action according to that gesture. </p>
 
-<p><b>Activities:</b></p>
+<p><h4>Activities:</h4></p>
 
 <ol>
 <li>My one Linux kernel patch is accepted by the Linux community, however it was just coding style fix but I become aware of code review process of Linux community.</li>
