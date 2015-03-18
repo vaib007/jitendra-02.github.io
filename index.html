@@ -1,59 +1,113 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
-    <meta charset='utf-8'>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
-
     <title>Jitendra-02.GitHub.io by jitendra-02</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
   </head>
-
   <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">Jitendra-02.GitHub.io</h1>
+        <p class="header">Jitendra Kumar Khasdev</p>
 
-    <header>
-      <div class="container">
-        <h1>Jitendra-02.GitHub.io</h1>
-        <h2>Jitendra Kumar Khasdev</h2>
 
-        <section id="downloads">
-          <a href="https://github.com/jitendra-02" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
-        </section>
-      </div>
-    </header>
 
-    <div class="container">
-      <section id="main_content">
-        <p><img src="https://avatars0.githubusercontent.com/u/5539110?v=3&amp;s=460" alt="jitendra">I am a Computer Science Engineering Student of Rajiv Gandhi Technical University Bhopal. I am technology lover and generally fun with kernel hacking just a hobby nothing much more than it. I always find pursuite of happiness into the science of kernel. I am great follower of Linux community. Sometimes I love to do some socialism with technology.</p>
+        <ul>
+          <li><a class="buttons github" href="https://github.com/jitendra-02">GitHub Profile</a></li>
+        </ul>
 
-<hr>
+      </header>
+      <section>
+        <p>Jitendra Kumar Khasdev
+17-March-2015</p>
 
-<p>Till Now I am:</p>
+<p>Mapping of functions (library or user defined) to system call.</p>
 
-<h3>
-<a id="nektech-shell-development" class="anchor" href="#nektech-shell-development" aria-hidden="true"><span class="octicon octicon-link"></span></a>NEKTech Shell Development</h3>
+<p>Abstract:</p>
 
-<p>In this project I have developed, 2 features of nektech shell (An Educational Purpose shell).I worked on gcc,gdb,cscope, and most favorite vi editor.</p>
+<p>Mapping of functions with respective system calls will the help to give closer view of interaction between kernel space and user space. Prime focus is on to simulate user space function to kernel space function. This project will simulate linking between user space function to kernel space function. Adding this feature to strace, it will make it more powerful for visualization. Strace can do effectively call by call mapping with respective system call.</p>
 
-<hr>
+<p>Content:</p>
 
-<h3>
-<a id="system-identification-utility" class="anchor" href="#system-identification-utility" aria-hidden="true"><span class="octicon octicon-link"></span></a>System Identification Utility</h3>
+<p>Description and why it is innovative</p>
 
-<p>This is the utility which keep track record of client system.
-eg. no of authorized system, no of unauthorized system, no of active system etc</p>
+<p>When a function is called into a simple c program, ultimately it invokes a system call to get service by the kernel. Most of the time, user (developer/administrator etc.) having a difficulty to find which function is invoking a particular system call. 
+                        Let us assume two different library functions invoking same system call simultaneously. Now, user has to put very hard effort to differentiate which function is linked with a particular system call. Currently strace displays system calls called by a program without any callee function description. </p>
 
-<hr>
+<p>Our project will map each user space function to corresponding system call in a proper view format, so that user will not having trouble to simulate user space function to kernel space function. It will make debugging and tracing fast and more efficient.</p>
 
-<h3>
-<a id="atm-survellience" class="anchor" href="#atm-survellience" aria-hidden="true"><span class="octicon octicon-link"></span></a>ATM Survellience</h3>
+<p>Design :</p>
 
-<p>It is proactive security system for the ATM, in sensor observ the activity of the person inside the ATM an take action accordingly. This project is National Microsoft Imagine Cup 1 winner :)</p>
+<p>Step 1:  First user will fire a binary of program with strace command with specified flag.</p>
+
+<p>Step 2:  Whenever strace will detect particular flag then it will perform following steps else it will   give result as it is as it gives.</p>
+
+<p>Step 3:  It will collect the list of functions which is used into a particular program from symbol table     or may be any other way. [Preliminary focused on symbol table].</p>
+
+<p>Step 4:  Now perform mapping of each function to corresponding system call and display into such      kind of format [format of display is not fixed it is depends on degree of attractiveness].</p>
+
+<pre><code>eg. Printf() calls internally write() syscall, so output format as,
+
+printf ()         -----------------------------------------
+                  -&gt;     |   write(1, buffer, sizeof(buffer));    |
+              ------------------------------------------
+</code></pre>
+
+<p>Step 5 : Exit </p>
+
+<pre><code>    it will trace function calls like debugger fashion but limit of tracing will be until it  reach to a appropriate system call. It will not only give broad view of working of the system but also it will be handy hacking tool as well as it will be helpful for new bodies to apply the concept of computer science.
+</code></pre>
+
+<p>That will increase strace audience area as well as it will be a more strong and powerful tool.</p>
+
+<p>Education:
+Currently pursuing Bachelor’s in Engineering from Computer Science and Engineering with 8.02 CGPA.
+Higher secondary school     78.6 %
+High school             87.2%</p>
+
+<p>Courseware:
+C, Data structure, Operating system, Linux, Computer system organisation, Networking, OOT, Principle of programming language, Software engineering and project management etc.</p>
+
+<p>Training:
+C, Linux, System programming</p>
+
+<p>Projects:
+NEKTech-Linux-shell development:
+It is Unix like a shell for nektech-linux, I have worked two feature of it (cd support, and cd ~ support). </p>
+
+<p>System Identification Module:
+It is utility which keep record of active client machines over the server. Basically it based on product activation and deactivation model.</p>
+
+<p>Gesture detection based security system:
+In which, it detects predefined gesture of the person, and take action according to that gesture. </p>
+
+<p>Activities:</p>
+
+<ol>
+<li><p>My one Linux kernel patch is accepted by the Linux community, however it was just coding style fix but I become aware of code review process of Linux community.</p></li>
+<li><p>I am aware of version controlling software and I have worked git.</p></li>
+<li><p>I am good c, Linux and Operating System concept and enthusiastic about system programming and kernel.</p></li>
+<li><p>I have communicated in open source community with developer via mailing list.</p></li>
+<li><p>Solved coding problems on hackerrank.com, and some on spoj.com</p></li>
+<li><p>Participated into eudyputa challenge solved till level 6.</p></li>
+</ol>
+
+<p>I am focused on only this project and period of next 4-5 month I am free, because I am on end session of my engineering so it will be a great chance for me to work for real world before entering into a professional engineering life.   </p>
       </section>
+      <footer>
+        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
     </div>
-
-    
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+		
   </body>
 </html>
