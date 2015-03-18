@@ -57,15 +57,12 @@ When a function is called into a simple c program, ultimately it invokes a syste
 
 <pre><code>eg. Printf() calls internally write() syscall, so output format as,
 printf ()         -----------------------------------------
-                  -&gt; |   write(1, buffer, sizeof(buffer));    |
-              ------------------------------------------
+           -&gt; |   write(1, buffer, sizeof(buffer));    |
+              	 ------------------------------------------
 </code></pre>
 
 <p>Step 5 : Exit </p>
-
-<pre><code>    it will trace function calls like debugger fashion but limit of tracing will be until it  reach to a appropriate system call. It will not only give broad view of working of the system but also it will be handy hacking tool as well as it will be helpful for new bodies to apply the concept of computer science.
-</code></pre>
-
+<p>it will trace function calls like debugger fashion but limit of tracing will be until it  reach to a appropriate system call. It will not only give broad view of working of the system but also it will be handy hacking tool as well as it will be helpful for new bodies to apply the concept of computer science.</p>
 <p>That will increase strace audience area as well as it will be a more strong and powerful tool.</p>
 
 <p>Education:
