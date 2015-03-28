@@ -34,34 +34,104 @@
         <p>Jitendra Kumar Khasdev
 17-March-2015</p>
 
-<p><h3>Mapping of functions (library or user defined) to system call</h3></p>
+<p><h3>Mapping system call with structured output</h3></p>
 <h4>Abstract:</h4>
-<p style="text-align: justify">Mapping of functions with respective system calls will help to get closer view of interaction between kernel space and user space. Prime focus is on to simulate user space function to kernel space function. This project will simulate linking between user space function to kernel space function. Adding this feature to strace, will make it more powerful for visualization. Strace can do effectively call by call mapping with respective system call.</p>
+<p style="text-align: justify">Strace is microscope for user, but making it more understandable to the user will impact more than it has ever. Why coding standards are fixed? Answer is, programmer does not bother about syntax, only they focus on logic. With period of time eyes of the programmer become very habitual with the syntax and they can easily find out the issues. Mapping of system calls with structured output will help to provide inside view of interaction between kernel space and user space.</p>
 
 <h4>Content:</h4><p style="text-align: justify">
-When a function is called into a simple c program, ultimately it invokes a system call to get service by the kernel. Most of the time, user (developer/administrator etc.) having a difficulty to find which function is invoking a particular system call.</p>
+Display data into a proper view always help to find out bug efficiently and rapidly. This mainly focus on the output should be displayed in such a manner so that user will not get any difficulty in finding appropriate data.Prime focus is on to provide effective output format to user so that user can clearly identify relevant data without bothering about the syntax.</p>
 
-<p style="text-align: justify">Let us assume two different library functions invoking same system call simultaneously. Now, user has to put very hard effort to differentiate which function is linked with a particular system call. Currently strace displays system calls called by a program without any callee function description. Our project will map each user space function to corresponding system call in a proper view format, so that user will not having trouble to simulate user space function to kernel space function. It will make debugging and tracing fast and more efficient.</p>
+<p style="text-align: justify">Purpose of this proposal:<br/>
 
-<p><h4>Design:</h4>
-   Step 1:  First user will fire a binary of program with strace command with specified flag.<br/>
-   Step 2:  Whenever strace will detect particular flag then it will perform following steps else it will   give result as it is as it gives.<br/>
-   Step 3:  It will collect the list of functions which is used into a particular program from symbol table or may be any other way. [Preliminary focused on symbol table].<br/>
-   Step 4:  Now perform mapping of each function to corresponding system call and display into such kind of format [format of display is not fixed it is depends on degree of attractiveness].</p>
+1. The output of strace, make it more structural.<br/>
 
-<pre><code>eg. Printf() calls internally write() syscall, so output format as,
-printf ()         -----------------------------------------
- 	       -&gt; |   write(1, buffer, sizeof(buffer));    |
-               	  ------------------------------------------
-</code></pre>
+2. Make it as simple as it can be understood by 1st year student completely.<br/>
 
-<p>Step 5 : Exit </p>
-<p style="text-align: justify">it will trace function calls like debugger fashion but limit of tracing will be until it  reach to a appropriate system call. It will not only give broad view of working of the system but also it will be handy hacking tool as well as it will be helpful for new bodies to apply the concept of computer science.</p>
-<p>That will increase strace audience area as well as it will be a more strong and powerful tool.</p>
+3. Make it more descriptive.<br/>
 
-<p style="text-align: justify">I am focused on only this project and period of next 4-5 month I am free, because I am on end session of my engineering so it will be a great chance for me to work for real world before entering into a professional engineering life.   </p>
+4. Make it as so that relevant data should be easily identifiable.<br/>
 
-<p>If I got chance to work on strace in GSOC2015, I will report here about my progress so stay tuned :-)   </p>
+5. Describe various information regarding system call.<br/>
+
+ 
+
+Design :<br/>
+
+Step 1: First user will fire a binary of program with strace command with specified flag.<br/>
+
+Step 2: Whenever strace will detect particular flag then it will perform following steps else it will give result as it is as it gives.<br/>
+
+Step 3: Now it perform mapping of each system call to corresponding formatted output.<br/>
+
+ 
+
+Possible output format.<br/>
+
+Structured output format 1: (like a c Structure)<br/>
+
+write{
+<br/>
+         "arg1:,<br/>
+
+          "arg2",<br/>
+
+           "arg3",<br/>
+
+            info:<br/>
+
+};<br/>
+
+Structured output format 2: (eg. html format)<br/>
+
+ <write info: short discription "msg">
+<br/>
+                   <![CDATA[<arg1>]]> val1 <![CDATA[<arg1>]]>
+<br/>
+                   <arg2> val2  </arg2>
+<br/>
+                   <arg3> val3  </arg3>
+<br/>
+                  <arg4> val4 </arg4>
+<br/>
+                  <arg5> val5 </arg5>
+<br/>
+                   <arg6> val6 </arg6>
+<br/>
+</write><br/>
+
+Structured output format 3: (eg json)<br/>
+
+ write {<br/>
+
+            "argname": val<br/>
+
+             "argname": val<br/>
+
+             "argname": val<br/>
+
+            "argname": val<br/>
+
+           }
+
+Structured output format 4:<br/>
+
+                          -----------------------------------------<br/>
+
+   	write  ->         |    1, buffer, sizeof(buffer))        |<br/>
+
+                          ------------------------------------------<br/>
+
+ Step 5 : Exit<br/>
+
+ 
+
+The structured output in proper format will help to reveal lots of facts of the system and is clearly understandable by the user. Making its output in more systematic manner will  like adding a zooming feature into a microscope. <br/>
+As microscope can be used more effectively if it is having a good power of lens in a similar way, as we have structured way of representation is that can easily deliver useful data to the end user .That will increase strace audience area as well as it will be a more strong and powerful tool. <br/>
+Strace is a powerful utility but the output of strace is not fully reachable to every programmer/administrator/techie etc.<br/>
+My proposal based on this idea to catch that area of the audience which is apart from it because they unable to identify things.<br/>
+Certainly, visual effects speak itself, and making it more readable, it will add on the power of strace. Until unless people will not understand the output, how can we think they will enjoy the real power of strace.<br/>
+
+</p>
       </section>
       <footer>
       </footer>
